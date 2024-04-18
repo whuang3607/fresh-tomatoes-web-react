@@ -1,0 +1,120 @@
+
+.search-page {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .genre-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .genre-buttons button {
+    background-color: #333;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .genre-buttons button.active,
+  .genre-buttons button:hover {
+    background-color: #f0ad4e;
+  }
+  
+  .title {
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 0;
+    margin: 20px 0;
+  }
+  
+  .movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 50px;
+  }
+  
+  .movie-card {
+    width: 200px;
+    background-color: #282c34;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .movie-info {
+    padding: 10px 0;
+  }
+  
+  .movie-info h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .movie-info p {
+    font-size: 14px;
+    color: #999;
+  }
+  .form-select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: white;
+    background-clip: padding-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+   
+  }
+  
+  .form-select:focus {
+    border-color: #086cd6;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  
+  .form-select::-ms-expand {
+    display: none;
+  }
+  
+  
+
+  .form-select:focus {
+    border: 2px solid #0e7bd3;
+    outline: 0;
+  }
+  
+
+  .form-select {
+    background-image: linear-gradient(to bottom, #26ed10, #1579de);
+  }
+  .form { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .movie-image{
+    width: 	180px;
+    height: 256px;
+  }
+  .movie-info {
+    text-align: center; /* Center aligns text for all elements */
+  }

@@ -1,0 +1,55 @@
+.im-movie-tile-style {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: fit-content;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.im-movie-title-section {
+  display: flex;
+}
+
+.im-movie-title {
+  width: 150px;
+  text-wrap: wrap;
+  font-weight: bold;
+}
+
+.im-star {
+  color: goldenrod;
+  margin-right: 5px;
+}
+
+.im-movie-poster {
+  border-radius: 8px;
+  width: 150px;
+  height: 228px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  transition: all 0.5s;
+}
+
+.btn-primary.btn-outline {
+  border-color: #428bca;
+}
+
+/* 
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+} */
+
+.movie-info {
+  text-align: center; /* Center aligns text for all elements */
+}
