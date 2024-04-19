@@ -16,7 +16,7 @@ const Home = ({ adminMovies }) => {
   const getMovies = async () => {
     try {
       const response = await client.getTitles();
-      console.log(response);
+      // console.log(response);
       setMovies(response);
     } catch (error) {
       console.error("Error fetching movies:", error);
@@ -25,7 +25,7 @@ const Home = ({ adminMovies }) => {
   const getUpcomingMovies = async () => {
     try {
       const response = await client.getUpcomingTitles();
-      console.log(response);
+      // console.log(response);
       setUpcomingMovies(response);
     } catch (error) {
       console.error("Error fetching upcoming movies:", error);
@@ -58,10 +58,10 @@ const Home = ({ adminMovies }) => {
     getUpcomingMovies();
     const getWatchlistedMovies = async () => {
       try {
-        console.log("current user", currentUser);
-        console.log("watchlist page");
+        // console.log("current user", currentUser);
+        // console.log("watchlist page");
         const response = await client.getWatchlist(currentUser._id);
-        console.log("Watchlist response:", response);
+        // console.log("Watchlist response:", response);
         const watchlistMovies = response.map((watchlistItem) => watchlistItem.movie);
 
         setWatchlistedMovies(watchlistMovies);

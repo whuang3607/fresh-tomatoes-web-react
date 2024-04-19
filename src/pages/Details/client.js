@@ -17,9 +17,9 @@ export const getMovieById = async (id) => {
     var movie = '';
     const url = `${MOVIE_API}/${id}`;
     const remoteUrlForTitle = `https://moviesdatabase.p.rapidapi.com/titles/${id}`
-    const remoteUrlForActors = `https://moviesdatabase.p.rapidapi.com/titles/${id}/crew`
+    const remoteUrlForActors = `https://moviesdatabase.p.rapidapi.com/titles/${id}/aka`
     const remoteUrlForRatings = `https://moviesdatabase.p.rapidapi.com/titles/${id}/ratings`
-    console.log(id);
+    // console.log(id);
     const response = await axios.get(url);
     if(response.data == null){
       const [movieResponse, actorsResponse, ratingsResponse] = await Promise.all([
@@ -27,9 +27,9 @@ export const getMovieById = async (id) => {
         axios.get(remoteUrlForActors, headers),
         axios.get(remoteUrlForRatings, headers),
       ]);
-      console.log(movieResponse)
-      console.log(actorsResponse)
-      console.log(ratingsResponse)
+      // console.log(movieResponse.data.results)
+      console.log(actorsResponse.data)
+      // console.log(ratingsResponse.data)
       movie = {
         title: movieResponse.data.results.titleText.text,
         primary_image: movieResponse.data.results.primaryImage ? movieResponse.data.results.primaryImage : {url: "https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp"},
@@ -40,7 +40,7 @@ export const getMovieById = async (id) => {
     else {
       movie = response.data
     }
-    console.log("movie", movie)
+    // console.log("movie", movie)
     return movie;
   } catch (error) {
     console.error(error);
@@ -50,9 +50,9 @@ export const getMovieById = async (id) => {
 export const getUserReviews = async (movieId) => {
   try {
     const url = `${REVIEWS_API}/movie/${movieId}`;
-    console.log(movieId);
+    // console.log(movieId);
     const response = await axios.get(url);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -62,9 +62,9 @@ export const getUserReviews = async (movieId) => {
 export const findUserById = async (userId) => {
   try {
     const url = `${USERS_API}/${userId}`;
-    console.log(userId);
+    // console.log(userId);
     const response = await axios.get(url);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -74,7 +74,7 @@ export const findUserById = async (userId) => {
 export const createReview = async (review) => {
   try {
     const response = await axios.post(`${REVIEWS_API}/review`, review);
-    console.log("review", response.data);
+    // console.log("review", response.data);
     return response.data;
   } catch (error) {
     console.error("Error creating review:", error);

@@ -26,10 +26,10 @@ const MovieDetails = () => {
       comment: userFeedback,
       blogLink: blogLink
     }
-    console.log(newUserReview)
+    // console.log(newUserReview)
     try {
       const response = await client.createReview(newUserReview)
-      console.log(response)
+      // console.log(response)
       setUserReviews([...userReviews, newUserReview])
       setUserRating(0)
       setUserFeedback('')
@@ -65,7 +65,7 @@ const MovieDetails = () => {
   const getMovies = async () => {
     try {
       const response = await client.getMovieById(movieId)
-      console.log(response)
+      // console.log(response)
       setMovieData(response)
     } catch (error) {
       console.error('Error fetching movie:', error)
@@ -75,7 +75,7 @@ const MovieDetails = () => {
   const getUserReviews = async movieId => {
     try {
       const response = await client.getUserReviews(movieId)
-      console.log(response)
+      // console.log(response)
 
       const usersPromises = response.map(async review => {
         try {
@@ -111,8 +111,8 @@ const MovieDetails = () => {
     return <div>Loading...</div>
   }
 
-  console.log(movieData.primaryImage?.url)
-  console.log(movieData.primaryImage)
+  // console.log(movieData.primaryImage?.url)
+  // console.log(movieData.primaryImage)
 
   return (
     <div className='container mt-5'>
