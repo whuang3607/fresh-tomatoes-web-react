@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const BASE_API = "https://moviesdatabase.p.rapidapi.com";
-export const TITLES_API = `${BASE_API}/titles?year=2022&page=2&titleType=movie`;
-export const UPCOMING_API = `${BASE_API}/titles/x/upcoming?page=7&titleType=movie`;
+export const TITLES_API = `${BASE_API}/titles?year=2020&page=2&titleType=movie`;
+export const UPCOMING_API = `${BASE_API}/titles?year=2023&page=5&titleType=movie`;
 const DB_BASE_API ="http://localhost:4000";
 export const WATCHLIST_API = `${DB_BASE_API}/api/watchlist`;
 
