@@ -27,7 +27,7 @@ const TopBar = () => {
   }
 
   return (
-    <div style={{ backgroundColor: 'black' }}>
+    <div style={{ backgroundColor: 'rgb(230, 15, 15)', fontSize: 'large'}}>
       <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
         <div class='container-fluid'>
           <div class='navbar-header'>
@@ -43,13 +43,22 @@ const TopBar = () => {
               <span class='icon-bar'></span>
               <span class='icon-bar'></span>
             </button>
-            <Link
-              class='navbar-brand'
-              to='/'
-              style={{ backgroundColor: 'black' }}
-            >
-              IMDB
-            </Link>
+
+            <div className="navbar-brand-container d-flex justify-content-center align-items-center"> {/* New div container */}
+              <Link to='/' className='navbar-brand' style={{ fontSize: '40px' }}>
+                Fresh Tomatoes
+              </Link>
+              <img src={"https://png.pngtree.com/png-clipart/20230113/ourmid/pngtree-red-fresh-tomato-with-green-leaf-png-image_6561484.png"} 
+              alt="Tomato" 
+              style={{ width: '40px' }} /> {/* Tomato image */}
+            </div>
+
+            
+            {/* <Link
+              class='navbar-brand' to='/' 
+              style={{ backgroundColor: 'rgb(230, 15, 15)', color: 'white'}}>
+              Fresh Tomatoes
+            </Link> */}
           </div>
 
           <div
@@ -68,7 +77,7 @@ const TopBar = () => {
           >
             <ul class='nav navbar-nav'>
               <li class='active'>
-                <Link to='/home' style={{ backgroundColor: 'black' }}>
+                <Link to='/home' style={{ backgroundColor: 'rgb(230, 15, 15)', color: 'white'}}>
                   Home <span class='sr-only'>(current)</span>
                 </Link>
               </li>
@@ -83,13 +92,13 @@ const TopBar = () => {
                 )}
               </li>
               <li>
-                <Link to='/search' style={{ backgroundColor: 'black' }}>
+                <Link to='/search' style={{ backgroundColor: 'rgb(230, 15, 15)', color: 'white'  }}>
                   Search Movies
                 </Link>
               </li>
               {currentUser && currentUser.role === 'ADMIN' && (
                 <li>
-                  <Link to='/addMovie' style={{ backgroundColor: 'black' }}>
+                  <Link to='/addMovie' style={{ backgroundColor: 'rgb(230, 15, 15)', color: 'white'  }}>
                     Add Movie
                   </Link>
                 </li>
@@ -100,14 +109,14 @@ const TopBar = () => {
               <li>
                 <form class='navbar-form navbar-left' role='search'>
                   <div class='form-group'>
-                    <Link to={`/searchmovie`} className='im-icon'>
+                    <Link to={`/searchmovie`} className='im-icon' style={{color: 'white'}}>
                       <VscSearch />
                     </Link>
 
                     <Link
                       to={currentUser ? '/profile' : '/signin'}
                       onClick={handleUserIconClick}
-                      className='im-icon'
+                      className='im-icon' style={{color: 'white'}}
                     >
                       <VscAccount />
                     </Link>
