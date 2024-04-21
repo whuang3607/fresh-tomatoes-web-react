@@ -95,7 +95,7 @@ const Home = ({ adminMovies }) => {
                 imageUrl={
                   movie.primaryImage
                     ? movie.primaryImage.url
-                    : "https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp"
+                    : "./../support/error_image.png"
                 }
                 rating={movie.rating}
               userId={currentUser ? currentUser._id : null}
@@ -115,7 +115,7 @@ const Home = ({ adminMovies }) => {
             imageUrl={
               movie.primaryImage
                 ? movie.primaryImage.url
-                : "https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp"
+                : "https://static.thenounproject.com/png/482114-200.png"
             }
             rating={ratings[movie.id] || 0}
             userId={currentUser ? currentUser._id : null}
