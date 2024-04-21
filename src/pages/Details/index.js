@@ -55,12 +55,18 @@ const MovieDetails = () => {
 
   const [movieData, setMovieData] = useState({
     title: 'The Color Purple',
-    actors: ['Alice Johnson', 'David Thompson'],
-    description: 'The Color Purple is a heartwarming drama...',
-    rating: 6.8,
-    primaryImage: {
-      url: 'https://m.media-amazon.com/images/M/MV5BYjBkNGE0NGYtYmU5Ny00NjRiLTk5MmYtMWU4NzYxMDE4YWY4XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg',
-    },
+    // actors: ['Alice Johnson', 'David Thompson'],
+    // description: 'The Color Purple is a heartwarming drama...',
+    // rating: 6.8,
+    // primaryImage: {
+    //   url: 'https://m.media-amazon.com/images/M/MV5BYjBkNGE0NGYtYmU5Ny00NjRiLTk5MmYtMWU4NzYxMDE4YWY4XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg'
+    // }
+    primary_image:
+      'https://m.media-amazon.com/images/M/MV5BYjBkNGE0NGYtYmU5Ny00NjRiLTk5MmYtMWU4NzYxMDE4YWY4XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg',
+    release_year: '2016',
+    description: '',
+    genres: [],
+    actors: [],
   });
 
   const getMovies = async () => {
@@ -112,24 +118,29 @@ const MovieDetails = () => {
     return <div>Loading...</div>;
   }
 
+  // console.log(movieData)
   // console.log(movieData.primaryImage?.url)
-  // console.log(movieData.primaryImage)
+  // console.log(movieData.primary_image)
 
   return (
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-4">
           <img
-            src={movieData.primaryImage?.url}
+            src={movieData.primary_image}
             alt={movieData.title}
             className="im-poster"
           />
         </div>
         <div className="col-md-8">
           <h1>{movieData.title}</h1>
-          <p>Actors: {movieData.actors.join(', ')}</p>
+          <p>Actors: {movieData.actors}</p>
+          <p>Genres: {movieData.genres}</p>
+          <p>Release Year: {movieData.release_year}</p>
           <p>Description: {movieData.description}</p>
-          <p>Rating: {movieData.rating}</p>
+          {/* <p>Actors: {movieData.actors.join(', ')}</p>
+          <p>Description: {movieData.description}</p> */}
+          {/* <p>Rating: {movieData.rating}</p> */}
           <button className="btn btn-primary" onClick={handleShowUserReviews}>
             Show Reviews
           </button>

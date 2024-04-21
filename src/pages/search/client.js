@@ -12,7 +12,7 @@ const headers = {
 
 export const getTitles = async (genre, type) => {
   try {
-    const url = `${TITLES_API}/?titleType=${type}&genre=${genre}&limit=30`
+    const url = `${TITLES_API}/?titleType=${type}&startYear=2000&endYear=2022&genre=${genre}&limit=30`
     const response = await axios.get(url, headers)
     console.log(response)
     return response.data.results
