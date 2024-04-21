@@ -36,7 +36,7 @@ const SearchPage = () => {
     <div className='search-page'>
       <div className='form'>
         <select
-          class='form-select'
+          class='form-select select-type-dropdown'
           aria-label='Default select example'
           onChange={handleSelectChange}
           value={type}
@@ -88,8 +88,8 @@ const SearchPage = () => {
             ></img>
             <div className='movie-info'>
               <h3>{movie.titleText.text}</h3>
-              <button>
-                <Link to={`/detail/${movie.id}`} key={movie.id}>
+              <button className='btn' style={{backgroundColor: 'yellow'}}>
+                <Link to={`/detail/${movie.id}`} key={movie.id} style={{color: 'black'}}>
                   {' '}
                   Details
                 </Link>

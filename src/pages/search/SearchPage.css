@@ -10,24 +10,24 @@
   }
   
   .genre-buttons button {
-    background-color: #333;
+    background-color: yellow;
     border: none;
     padding: 10px 20px;
     margin: 0 5px;
-    color: white;
+    color: black;
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
   .genre-buttons button.active,
   .genre-buttons button:hover {
-    background-color: #f0ad4e;
+    background-color: rgb(230, 15, 15);
+    color: white;
   }
   
   .title {
     text-align: center;
-    color: #fff;
-    background-color: #333;
+    color: black;
     padding: 10px 0;
     margin: 20px 0;
   }
@@ -42,7 +42,7 @@
   
   .movie-card {
     width: 200px;
-    background-color: #282c34;
+    background-color: #3b1a1ab1;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -71,8 +71,14 @@
   
   .movie-info p {
     font-size: 14px;
-    color: #999;
+    color: #d8d7d7;
   }
+
+  .movie-info button {
+    background-color: yellow;
+    margin: 5px;
+  }
+
   .form-select {
     padding: 10px 15px;
     font-size: 1rem;
@@ -103,9 +109,9 @@
   }
   
 
-  .form-select {
-    background-image: linear-gradient(to bottom, #26ed10, #1579de);
-  }
+  /* .form-select {
+    background-image: linear-gradient(to bottom, #e9f506, #b5f700);
+  } */
   .form { 
     display: flex;
     flex-wrap: wrap;
@@ -117,4 +123,9 @@
   }
   .movie-info {
     text-align: center; /* Center aligns text for all elements */
+  }
+
+  .select-type-dropdown{
+    background-color: yellow;
+    font-size: 20px;
   }
