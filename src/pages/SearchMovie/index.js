@@ -12,8 +12,7 @@ const Search = () => {
       const fetchMovies = async () => {
         const options = {
           method: 'GET',
-          url:
-            'https://moviesdatabase.p.rapidapi.com/titles/search/title/' +
+          url: 'https://moviesdatabase.p.rapidapi.com/titles/search/title/' +
             searchTerm,
           params: { titleType: 'movie' },
           headers: {
