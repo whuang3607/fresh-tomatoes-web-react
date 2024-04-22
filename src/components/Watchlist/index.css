@@ -1,8 +1,10 @@
 .im-watchlist-transparent {
-  font-size: 2em;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .im-watchlist-filled {
-  font-size: 2em;
+  font-size: 20px;
   color: goldenrod;
+  margin-top: 10px;
 }

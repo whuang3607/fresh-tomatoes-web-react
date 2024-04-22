@@ -90,6 +90,7 @@ const MovieDetails = () => {
           return {
             ...review,
             username: userResponse.username,
+            role: userResponse.role,
           };
         } catch (error) {
           console.error('Error fetching user details:', error);
@@ -208,7 +209,9 @@ const MovieDetails = () => {
             {userReviews.map((review, index) => (
               <li key={index} className="list-group-item">
                 <Link to={`/userdetail/${review.userId}`} key={review.userId}>
-                  <h3>{review.username}</h3>
+                  <h3>
+                    {review.username} ({review.role})
+                  </h3>
                 </Link>
                 <p>Rating: {review.rating}</p>
                 <p>{review.comment}</p>
