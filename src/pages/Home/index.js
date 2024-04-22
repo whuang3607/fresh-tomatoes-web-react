@@ -82,7 +82,7 @@ const Home = ({ adminMovies }) => {
   }, [movies, upcomingMovies]);
 
   return (
-    <div className="container">
+    <div style={{ margin: '20px' }}>
       {currentUser && (
         <div>
           <h3 className="subtitle">Watchlisted Movies</h3>
