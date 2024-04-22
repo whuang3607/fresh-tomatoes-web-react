@@ -28,7 +28,7 @@ const Movie = ({ id, title, imageUrl, userId }) => {
             to={`/detail/${id}`}
             key={id}
             className="btn btn-primary"
-            style={{ color: 'white' }}
+            style={{ color: 'black', backgroundColor: 'yellow' }}
           >
             {' '}
             Details
