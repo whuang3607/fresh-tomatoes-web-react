@@ -9,6 +9,8 @@
   width: fit-content;
   justify-content: space-between;
   align-items: center;
+  /* background-color: #dc6808b1; */
+  background-color: #8e1818b1;
 }
 
 .im-movie-title-section {
@@ -19,6 +21,8 @@
   width: 150px;
   text-wrap: wrap;
   font-weight: bold;
+  color: white;
+  align-items: center;
 }
 
 .im-star {

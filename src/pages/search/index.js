@@ -81,7 +81,7 @@ const SearchPage = () => {
               src={
                 movie.primaryImage
                   ? movie.primaryImage.url
-                  : 'https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp'
+                  : 'https://i.quotev.com/b2gtjqawaaaa.jpg'
               }
               alt={movie.titleText.text}
               className='movie-image'
