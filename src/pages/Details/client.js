@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const DB_BASE_API = 'http://localhost:4000';
+const DB_BASE_API = process.env.DB_LINK || 'http://localhost:4000';
 export const MOVIE_API = `${DB_BASE_API}/api/testMovies`;
 export const REVIEWS_API = `${DB_BASE_API}/api/testReviews`;
 export const USERS_API = `${DB_BASE_API}/api/users`;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const DB_BASE_API = 'http://localhost:4000';
+const DB_BASE_API = process.env.DB_LINK || 'http://localhost:4000';
 export const WATCHLIST_API = `${DB_BASE_API}/api/watchlist`;
 
 export const getMovieTitle = async (movieTitle) => {
