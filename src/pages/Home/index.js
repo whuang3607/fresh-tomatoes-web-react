@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useAuth } from "../../components/users/authenticateUser";
-import SearchPage from "../search/index";
-import * as client from "./client";
-import Movie from "../../components/Movie/movie";
-import "./index.css";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../components/users/authenticateUser';
+import SearchPage from '../search/index';
+import * as client from './client';
+import Movie from '../../components/Movie/movie';
+import './index.css';
 
 const Home = ({ adminMovies }) => {
   const [movies, setMovies] = useState([]);
@@ -19,7 +19,7 @@ const Home = ({ adminMovies }) => {
       // console.log(response);
       setMovies(response);
     } catch (error) {
-      console.error("Error fetching movies:", error);
+      console.error('Error fetching movies:', error);
     }
   };
   const getUpcomingMovies = async () => {
@@ -28,7 +28,7 @@ const Home = ({ adminMovies }) => {
       // console.log(response);
       setUpcomingMovies(response);
     } catch (error) {
-      console.error("Error fetching upcoming movies:", error);
+      console.error('Error fetching upcoming movies:', error);
     }
   };
 
@@ -40,7 +40,7 @@ const Home = ({ adminMovies }) => {
         [id]: response,
       }));
     } catch (error) {
-      console.error("Error fetching rating for movie with id", id, ":", error);
+      console.error('Error fetching rating for movie with id', id, ':', error);
     }
   };
 
@@ -61,12 +61,12 @@ const Home = ({ adminMovies }) => {
         // console.log("current user", currentUser);
         // console.log("watchlist page");
         const response = await client.getWatchlist(currentUser._id);
-        // console.log("Watchlist response:", response);
-        const watchlistMovies = response.map((watchlistItem) => watchlistItem.movie);
+        // console.log('Watchlist response:', response);
+        const watchlistMovies = response.map((watchlistItem) => watchlistItem);
 
         setWatchlistedMovies(watchlistMovies);
       } catch (error) {
-        console.error("Error fetching movies:", error);
+        console.error('Error fetching movies:', error);
       }
     };
     if (currentUser) {
@@ -86,27 +86,29 @@ const Home = ({ adminMovies }) => {
       {currentUser && (
         <div>
           <h4>Watchlisted Movies</h4>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {watchlistedMovies.map((movie) => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                title={movie.title}
-                imageUrl={
-                  movie.primaryImage
-                    ? movie.primaryImage.url
-                    : "./../support/error_image.png"
-                }
-                rating={movie.rating}
-              userId={currentUser ? currentUser._id : null}
-              />
+              <>
+                <Movie
+                  key={movie._id}
+                  id={movie.movieId}
+                  title={movie.movie.title}
+                  imageUrl={
+                    movie.movie.url
+                      ? movie.movie.url
+                      : './../support/error_image.png'
+                  }
+                  // rating={movie.rating}
+                  userId={currentUser ? currentUser._id : null}
+                />
+              </>
             ))}
           </div>
         </div>
       )}
 
       <h4>Upcoming Movies</h4>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {upcomingMovies.map((movie) => (
           <Movie
             key={movie.id}
@@ -115,15 +117,15 @@ const Home = ({ adminMovies }) => {
             imageUrl={
               movie.primaryImage
                 ? movie.primaryImage.url
-                : "https://static.thenounproject.com/png/482114-200.png"
+                : 'https://static.thenounproject.com/png/482114-200.png'
             }
-            rating={ratings[movie.id] || 0}
+            // rating={ratings[movie.id] || 0}
             userId={currentUser ? currentUser._id : null}
           />
         ))}
       </div>
       <h4>Recommended for you</h4>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {movies.map((movie) => (
           <Movie
             key={movie.id}
@@ -132,15 +134,15 @@ const Home = ({ adminMovies }) => {
             imageUrl={
               movie.primaryImage
                 ? movie.primaryImage.url
-                : "https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp"
+                : 'https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp'
             }
-            rating={ratings[movie.id] || 0}
+            // rating={ratings[movie.id] || 0}
             userId={currentUser ? currentUser._id : null}
           />
         ))}
       </div>
       <h4>Other movies</h4>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {adminMovies.map((movie) => (
           <Movie
             key={movie.id}
@@ -149,9 +151,9 @@ const Home = ({ adminMovies }) => {
             imageUrl={
               movie.primaryImage
                 ? movie.primaryImage.url
-                : "https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp"
+                : 'https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp'
             }
-            rating={ratings[movie.rating] || 0}
+            // rating={ratings[movie.rating] || 0}
             userId={currentUser ? currentUser._id : null}
           />
         ))}

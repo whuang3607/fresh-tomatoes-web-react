@@ -22,10 +22,6 @@ const headers2 = {
   },
 };
 
-let actorsList = [];
-
-let genreList = [];
-
 export const getMovieById = async (id) => {
   try {
     var movie = '';
@@ -52,7 +48,9 @@ export const getMovieById = async (id) => {
       // create a section for Genres!!!!
       // console.log(descriptionResponse.data[0])
       console.log(descriptionResponse.data);
+      let actorsList = [];
 
+      let genreList = [];
       for (let i = 0; i < descriptionResponse.data.cast.edges.length; i++) {
         if (i < descriptionResponse.data.cast.edges.length - 1) {
           actorsList.push(
@@ -65,7 +63,7 @@ export const getMovieById = async (id) => {
           );
         }
       }
-      // console.log(actorsList);
+      console.log('actorList' + actorsList);
 
       for (let j = 0; j < descriptionResponse.data.genres.genres.length; j++) {
         if (j < descriptionResponse.data.genres.genres.length - 1) {
