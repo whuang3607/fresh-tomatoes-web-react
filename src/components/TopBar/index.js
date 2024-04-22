@@ -84,7 +84,7 @@ const TopBar = () => {
               
               <li>
                 {currentUser && currentUser.role != 'ADMIN' ? (
-                  <Link to='/watchlist' style={{ backgroundColor: 'black' }}>
+                  <Link to='/watchlist' style={{ backgroundColor: 'rgb(230, 15, 15)', color: 'white' }}>
                     Watchlist
                   </Link>
                 ) : (
