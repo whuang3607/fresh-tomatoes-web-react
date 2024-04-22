@@ -85,7 +85,7 @@ const Home = ({ adminMovies }) => {
     <div className="container">
       {currentUser && (
         <div>
-          <h4>Watchlisted Movies</h4>
+          <h3 className="subtitle">Watchlisted Movies</h3>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {watchlistedMovies.map((movie) => (
               <Movie
@@ -95,17 +95,17 @@ const Home = ({ adminMovies }) => {
                 imageUrl={
                   movie.primaryImage
                     ? movie.primaryImage.url
-                    : "./../support/error_image.png"
+                    : "https://i.quotev.com/b2gtjqawaaaa.jpg"
                 }
                 rating={movie.rating}
-              userId={currentUser ? currentUser._id : null}
+                userId={currentUser ? currentUser._id : null}
               />
             ))}
           </div>
         </div>
       )}
 
-      <h4>Upcoming Movies</h4>
+      <h3 className="subtitle">Upcoming Movies</h3>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         {upcomingMovies.map((movie) => (
           <Movie
@@ -115,7 +115,7 @@ const Home = ({ adminMovies }) => {
             imageUrl={
               movie.primaryImage
                 ? movie.primaryImage.url
-                : "https://static.thenounproject.com/png/482114-200.png"
+                : "https://i.quotev.com/b2gtjqawaaaa.jpg"
             }
             rating={ratings[movie.id] || 0}
             userId={currentUser ? currentUser._id : null}
@@ -132,14 +132,14 @@ const Home = ({ adminMovies }) => {
             imageUrl={
               movie.primaryImage
                 ? movie.primaryImage.url
-                : "https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp"
+                : "https://i.quotev.com/b2gtjqawaaaa.jpg"
             }
             rating={ratings[movie.id] || 0}
             userId={currentUser ? currentUser._id : null}
           />
         ))}
       </div>
-      <h4>Other movies</h4>
+      <h3 className="subtitle">Other movies</h3>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         {adminMovies.map((movie) => (
           <Movie
@@ -149,7 +149,7 @@ const Home = ({ adminMovies }) => {
             imageUrl={
               movie.primaryImage
                 ? movie.primaryImage.url
-                : "https://www.dotyeti.com/wp-content/uploads/2023/01/barbie.webp"
+                : "https://i.quotev.com/b2gtjqawaaaa.jpg"
             }
             rating={ratings[movie.rating] || 0}
             userId={currentUser ? currentUser._id : null}

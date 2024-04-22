@@ -17,7 +17,8 @@ const Movie = ({ id, title, imageUrl, rating, userId }) => {
           <WatchlistButton movieTitle={title} userId={userId} />
         </div>
         <div className='movie-info'>
-          <Link to={`/detail/${id}`} key={id}  className='btn btn-primary' style={{color: 'white'}}>
+          <Link to={`/detail/${id}`} key={id}  className='btn btn-primary' 
+            style={{color: 'black', backgroundColor: 'yellow'}}>
             {' '}
             Details
           </Link>
