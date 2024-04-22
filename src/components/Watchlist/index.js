@@ -23,23 +23,47 @@ const WatchlistButton = ({ movieId, movie, userId }) => {
     checkWatchlist();
   }, [userId, movieId, movie]);
 
-  const addToWatchlist = async () => {
+  const toggleWatchlist = async () => {
     if (userId == null) {
       console.log('Please log in');
     } else {
-      console.log('in watchlist');
       try {
-        // console.log('movie', movie);
-        // const movieResponse = await client.getMovieTitle(movieTitle);
-        await client.createWatchlist({
-          userId: userId,
-          movieId: movieId,
-          movie: movie,
-        });
-        setClicked(!clicked);
-      } catch {}
+        if (clicked) {
+          await client.deleteWatchlist(userId, movieId);
+          setClicked(false);
+        } else if (clicked === false) {
+          // console.log('movie', movie);
+          // const movieResponse = await client.getMovieTitle(movieTitle);
+          await client.createWatchlist({
+            userId: userId,
+            movieId: movieId,
+            movie: movie,
+          });
+          setClicked(!clicked);
+        }
+      } catch (error) {
+        console.error('Error toggling watchlist:', error);
+      }
     }
   };
+
+  // const addToWatchlist = async () => {
+  //   if (userId == null) {
+  //     console.log('Please log in');
+  //   } else {
+  //     console.log('in watchlist');
+  //     try {
+  //       // console.log('movie', movie);
+  //       // const movieResponse = await client.getMovieTitle(movieTitle);
+  //       await client.createWatchlist({
+  //         userId: userId,
+  //         movieId: movieId,
+  //         movie: movie,
+  //       });
+  //       setClicked(!clicked);
+  //     } catch {}
+  //   }
+  // };
 
   return (
     <button
@@ -48,7 +72,7 @@ const WatchlistButton = ({ movieId, movie, userId }) => {
           ? 'im-watchlist-filled btn btn-success'
           : 'im-watchlist-transparent btn btn-light'
       }
-      onClick={() => addToWatchlist()}
+      onClick={() => toggleWatchlist()}
     >
       <CiBookmark />
     </button>

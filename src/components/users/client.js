@@ -4,8 +4,8 @@ const request = axios.create({
 });
 
 const BASE_API = process.env.DB_LINK || 'http://localhost:4000';
-export const USERS_API = `${BASE_API}/users`;
-export const REVIEWS_API = `${BASE_API}/reviews`;
+export const USERS_API = `${BASE_API}/api/users`;
+export const REVIEWS_API = `${BASE_API}/api/reviews`;
 export const getCurrentUser = async () => {};
 
 export const signin = async (credentials) => {

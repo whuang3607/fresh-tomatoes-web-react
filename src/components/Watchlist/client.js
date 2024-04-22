@@ -35,3 +35,15 @@ export const createWatchlist = async (watchlist) => {
     throw error;
   }
 };
+
+export const deleteWatchlist = async (userId, movieId) => {
+  try {
+    const response = await axios.delete(
+      `${WATCHLIST_API}/${userId}/${movieId}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error('Error deleting watchlist:', error);
+    throw error;
+  }
+};
