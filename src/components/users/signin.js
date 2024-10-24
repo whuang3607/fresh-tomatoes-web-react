@@ -17,9 +17,8 @@ function Signin() {
         navigate("/");
     }
     catch (error) {
-        console.log("error", error);
         if (error.response && error.response.status === 401) {
-
+          console.log(credentials)
             setShowError("Incorrect username or password. Please try again.");
         } else {
             setShowError("Sign-in failed. Please try again later.");
