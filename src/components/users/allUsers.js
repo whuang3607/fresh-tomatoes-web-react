@@ -74,8 +74,9 @@ function UserTable() {
               </select>
             </td>
             <td>
-            <BsFillCheckCircleFill onClick={updateUser}
-                className="me-2 text-success fs-1 text" />
+              <span>
+                <button type="button" onClick={updateUser} class="btn btn-success"><BsFillCheckCircleFill/></button>
+              </span>
             </td>
           </tr>
         </thead>
